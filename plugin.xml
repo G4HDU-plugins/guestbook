@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Plugin name="Guestbook" lan="LAN_GB_NAME" version="2.0" date="2016-06-06" compatibility="2.0" installRequired="true" >
+	<author name="Barry Keal G4HDU" url="http://www.keal.me.uk" />
+	<summary>A guestbook plugin</summary>
+	<description lan="LAN_GB_DESC">A very configurable guestbook plugin. Up to 65 configurable fields and a range of moderation options</description>
+	<category>Content</category>
+	<keywords>
+		<word>guestbook</word>
+		<word>visitor log</word>
+		<word>visitors book</word>
+		<word>guest book</word>
+	</keywords>
+	<adminLinks>
+		<link url='admin_config.php' description='Configure Guestbook Plugin' icon='images/guestbook_32.png' iconSmall='images/guestbook_16.png' primary='true' >LAN_CONGIGURE</link>
+	</adminLinks>
+	<siteLinks>
+		<link url="{e_PLUGIN}guestbook/index.php" perm='everyone' sef='guestbook'>LAN_GB_LINK</link>
+	</siteLinks>
+	<pluginPrefs>
+		<pref name="moderatorClass">249</pref>
+		<pref name="postClass">0</pref>
+		<pref name="readClass">0</pref>
+		<pref name="allowBBCode">0</pref>
+		<pref name="allowMultiIP">0</pref>
+		<pref name="allowLinksPost">0</pref>
+		<pref name="showURL">0</pref>
+		<pref name="entriesPerPage">10</pref>
+		<pref name="entryTimeout">10</pref>
+		<pref name="emailConfirmation">1</pref>
+		<pref name="modApproveGuests">1</pref>
+		<pref name="useCaptcha">1</pref>
+		<pref name="udfName1">User 1</pref>
+		<pref name="udfLength1">10</pref>
+		<pref name="udfActive1">0</pref>     
+		<pref name="udfName2">User 2</pref>
+		<pref name="udfLength2">10</pref>
+		<pref name="udfActive2">0</pref>
+	    <pref name="udfName3">User 3</pref>
+		<pref name="udfLength3">10</pref>
+		<pref name="udfActive3">0</pref>
+		<pref name="udfName4">User 4</pref>
+		<pref name="udfLength4">10</pref>
+		<pref name="udfActive4">0</pref>
+		<pref name="udfName5">User 5</pref>
+		<pref name="udfLength5">10</pref>
+		<pref name="udfActive5">0</pref>
+		<pref name="udfName6">User 6</pref>
+		<pref name="udfLength6">10</pref>
+		<pref name="udfActive6">0</pref>
+	</pluginPrefs>
+	<userClasses>
+		<class name="guestbook_postclass" description="Guestbook Posters" />
+		<class name="guestbook_viewclass" description="Guestbook Viewers" />
+		<class name="guestbook_moderators" description="Guestbook Moderators" />
+	</userClasses>
+</e107Plugin>

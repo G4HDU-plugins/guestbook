@@ -1,0 +1,453 @@
+#guestbookTimeRemain{
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+
+    padding:2px 6px;
+    font-size:.9em;
+    color:white;
+    -webkit-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+    box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+}
+#guestbookRemain{
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+
+    padding:2px 6px;
+    font-size:.9em;
+    color:white;
+    -webkit-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+    box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+}
+.guestbookMaxRed{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3019+0,cf0404+100;Red+3D */
+background: #ff3019; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+
+}
+.guestbookMaxOrange{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8f4f+0,ff670f+100 */
+background: #ff8f4f; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff8f4f 0%, #ff670f 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ff8f4f 0%,#ff670f 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ff8f4f 0%,#ff670f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8f4f', endColorstr='#ff670f',GradientType=0 ); /* IE6-9 */
+
+}
+.guestbookMaxGreen{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#05ad05+0,25a825+47,54a854+100 */
+background: #05ad05; /* Old browsers */
+background: -moz-linear-gradient(top,  #05ad05 0%, #25a825 47%, #54a854 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #05ad05 0%,#25a825 47%,#54a854 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #05ad05 0%,#25a825 47%,#54a854 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05ad05', endColorstr='#54a854',GradientType=0 ); /* IE6-9 */
+
+}
+.guestbook_caption{
+    margin:auto;
+    width:80px;
+    text-align:center;
+    height:25px;
+    }
+#guestbookform{
+}
+#guestbookEntriesContainer{
+    border-style:solid;
+    border-color:#045099;
+    border-left-width:1px;
+    border-right-width:1px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+}
+#guestbookHead{
+    display:block;
+    position:relative;
+}
+#guestbookEntries{
+    padding:3px 5px;
+    border-style:solid;
+    border-color:#045099;
+    border-left-width:0px;
+    border-right-width:0px;
+    border-top-width:1px;
+    border-bottom-width:0px;
+    overflow-x:auto;
+}
+#guestbookEntries{
+    padding:3px 5px;
+    border-style:solid;
+    border-color:#045099;
+    border-left-width:0px;
+    border-right-width:0px;
+    border-top-width:1px;
+    border-bottom-width:0px;
+    overflow-x:auto;
+}
+#guestbookBanner{
+    width:100%;
+    height:50px;
+    border-style:solid;
+    border-color:#045099;
+    border-left-width:0px;
+    border-right-width:0px;
+    border-top-width:0px;
+    border-bottom-width:0px;
+}
+#guestbookOurEntries{
+    width:60%;
+    padding:5px;
+    float:left;
+    font-size:20px;
+    margin-top:5px;
+    padding-left:10px;
+}
+#guestbookPleaseSign{
+    width:50px;
+    height:50px;
+    padding:0px;
+    float:right;
+    margin-top:0px;
+}
+#guestbookSignArea{
+    width:100%;
+    padding:5px;
+    border:1px solid green;
+}
+.signAreaHide{
+    display:none;
+}
+.signAreaDisplay{
+    display:block;
+}
+#guestbookSignAreaFields{
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+}
+#guestbookSignAreaButton{
+    text-align:center;
+    opacity: 1.0;
+     z-index:3;
+}
+#guestbookLinkSwap{
+
+}
+#guestbookSignAreaFields{
+    opacity: 1.0;
+ z-index:2;
+    /*display:none;*/
+    margin:5px;
+}
+#guestbookSignTable{
+    width:100%;
+    border-collapse: separate;
+}
+#guestbookSignTable th{
+    font-size:1.1em;
+    font-weight:bold;
+    color:#045099;
+    padding:0px;
+}
+.guestbookBody tr:nth-child(even) {
+    background: #eff7ff;
+}
+.guestbookBody tr:nth-child(odd) {
+    background: #FFF
+}
+.guestbookBody>tr{
+    font-size:1.0em;
+    font-weight:normal;
+    padding:3px;
+    border-style:solid;
+    border-color:#045099;
+    border-top-width:1px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-right-width:0px;
+}
+#guestbook_entries{
+    display:block;
+    border:1px solid black;
+    width:100%;
+    padding:3px;
+    margin:0px;
+    border:1px  solid black;
+}
+.guestbookRow{
+    width:100%;
+    padding:3px;
+    margin:3px;
+    border:0px  solid black;
+}
+.guestbookName{
+    font-size: 1.0em;
+    text-align:left;
+    float:left;
+    border-style:solid;
+    border-color:transparent;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-right-width:0px;
+
+
+}
+.guestbookComment{
+    border-style:solid;
+    border-color:transparent;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-right-width:0px;
+}
+.guestbookPosted{
+    font-size: 0.95em;
+    text-align:left;
+    border-style:solid;
+    border-color:transparent;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-right-width:0px;
+}
+.guestbookClear{
+    clear:both;
+}
+.guestbookNewEntryIcon{
+    font-size: 36px;
+    padding-right: 10px;
+    margin-top:4px;
+}
+.guestbookBackIcon{
+    font-size: 36px;
+    padding-right: 10px;
+    margin-top:4px;
+}
+
+.guestbookWords{
+font-size:1.5em;
+    }
+.btn-group>.btn, .btn-group-vertical>.btn{
+    float:none;
+    }
+.guestbookModeration{
+    background-color:#fdf39e;
+    width:100%;
+    padding:10px;
+    }
+.guestbookModTitle{
+    font-weight:bold;
+    font-size:1.2em;
+    }
+.guestbookUnApproveIcon a{
+    font-size: 28px;
+    padding-right: 10px;
+    color:green;
+}
+.guestbookApproveIcon a{
+    font-size: 28px;
+    padding-right: 10px;
+    color:red;
+}
+.gbmodRed {
+    font-size: 14px;
+    padding-right: 12px;
+    color: red;
+}
+.gbmodGreen {
+    font-size: 14px;
+    padding-right: 12px;
+    color: green;
+}
+.gbmodBlue {
+    font-size: 14px;
+    padding-right: 12px;
+    color: blue;
+}
+.guestbookNameCol{
+    width:20%;
+    text-align:left;
+    border-style:solid;
+    border-color:#045099;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    border-right-width:0px;
+}
+.guestbookCommentCol{
+    width:60%;
+    text-align:left;
+    border-style:solid;
+    border-color:#045099;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:1px;
+    border-right-width:0px;
+}
+.guestbookDateCol{
+    width:20%;
+    text-align:left;
+    border-style:solid;
+    border-color:#045099;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-left-width:1px;
+    border-right-width:0px;
+}
+
+.guestbookViewName{
+    background-color: #e6eaf1;
+        padding:5px;
+        margin-right:5px;
+}
+.guestbookViewValue{
+    background-color: white;
+        padding:5px;
+        margin-right:5px;
+}
+#guestbookTable{
+    
+    border-collapse: separate; 
+    border-spacing: 5px;
+    width: 100%;
+}
+#guestbookMod{
+    
+    border-collapse: separate; 
+    border-spacing: 5px;
+    width: 100%;
+}
+.guestbookClear{
+    clear:both;
+}
+.guestbook_16{
+    width: 16px;
+    height: 16px;
+}
+
+blockquote.guestbookQuote {
+  font: 14px/20px italic Times, serif;
+ /* padding: 8px;*/
+  background-color: #faebbc;
+  border-top: 1px solid #e1cc89;
+  border-bottom: 1px solid #e1cc89;
+  /*margin: 5px;*/
+text-indent: -32px;
+padding-bottom:10px;
+padding-left:40px;
+  border-left:0px;
+  }
+blockquote.guestbookQuote  :before {
+        font-family: FontAwesome;
+font-size:20px;
+        top:0;
+       margin-right:10px;
+        content: "\f10d"; 
+    }
+blockquote.guestbookQuote  :after {
+        font-family: FontAwesome;
+            font-size:20px;    
+        top:0;
+        float:right;
+        content: "\f10e"; 
+margin-right:-22px;
+    }
+blockquote.guestbookQuote span {
+
+  	}
+
+
+#countdownContainer{
+        border:2px solid blue;
+        width:100px;
+        padding:10px 5px 5px 5px;
+        margin:5px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        font-size:12px;
+        line-height:1;
+        display:inline-block;
+                
+}
+#countdownContainer p{
+    text-align: center;
+    color: blue;
+    font-size: 12px;
+
+    }
+ul.countdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+
+}
+ul.countdown li {
+    display: inline-block;
+}
+ul.countdown li span {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 12px;
+}
+ul.countdown li.seperator {
+    font-size: 14px;
+    line-height: 12px;
+    vertical-align: top;
+}
+ul.countdown li p {
+    color: blue;
+    font-size: 10px !important;
+    padding-top:2px;
+}
+.countdownPink{
+    background-color:pink;
+
+}
+.countdownRed{
+    background-color:red;
+}
+.guestbookParam{
+    display:none;
+}
+.backgroundAnimatedPink{
+        background-color: #ffedf0 !important;
+        background-image:none !important;
+    -webkit-transition: background-color 4000ms linear;
+    -moz-transition: background-color 4000ms linear;
+    -o-transition: background-color 4000ms linear;
+    -ms-transition: background-color 4000ms linear;
+    transition: background-color 4000ms linear;
+        -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation-direction: alternate;
+
+        -webkit-animation-iteration-count: 2; /* Chrome, Safari, Opera */
+    animation-iteration-count: 2;
+}
+.backgroundAnimatedRed{
+        background-color: red !important;
+        background-image:none !important;
+    -webkit-transition: background-color 4000ms linear;
+    -moz-transition: background-color 4000ms linear;
+    -o-transition: background-color 4000ms linear;
+    -ms-transition: background-color 4000ms linear;
+    transition: background-color 4000ms linear;
+        -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation-direction: alternate;
+
+        -webkit-animation-iteration-count: 2; /* Chrome, Safari, Opera */
+    animation-iteration-count: 2;
+}
+.nextBackgroundAnimated{
+        background-color: white !important;
+        background-image:none !important;
+}
