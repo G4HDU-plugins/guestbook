@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="Guestbook" lan="LAN_GB_NAME" version="2.0" date="2016-06-06" compatibility="2.0" installRequired="true" >
+<e107Plugin name="Guestbook" lan="LAN_GB_NAME" version="2.0.1" date="2016-06-06" compatibility="2.0" installRequired="true" >
 	<author name="Barry Keal G4HDU" url="http://www.keal.me.uk" />
 	<summary>A guestbook plugin</summary>
 	<description lan="LAN_GB_DESC">A very configurable guestbook plugin. Up to 65 configurable fields and a range of moderation options</description>
