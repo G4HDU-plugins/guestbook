@@ -101,12 +101,25 @@ class guestbook
         $this->admin = check_class($this->prefs['moderatorClass']);
         $this->poster = check_class($this->prefs['postClass']) || $this->admin;
         $this->sc->poster = $this->poster;
-        $this->viewer = check_class($this->prefs['readClass']) || $this->poster;
-$this->guest=check_class('252');
-$this->sc->guest=$this->guest;
+        $this->guest = check_class('252');
+        $this->sc->guest = $this->guest;
+        $this->approve = true;
+        if ($this->guest && $this->prefs['emailConfirmation']) {
+            $this->approve = false;
+            $this->emailapprove = true;
+        } elseif (check_class($this->prefs['autoApproverClass']) || $this->admin) {
+            $this->approve = true;
+        } elseif ($this->guest && $this->prefs['modApproveGuests']) {
+            $this->approve = false;
+            $this->modapprove = true;
+        }
 
-//var_dump($this->guest);
-//var_dump($this->prefs['readClass']);
+        print_a($this->approve);
+        $this->viewer = check_class($this->prefs['readClass']) || $this->poster;
+
+
+        //var_dump($this->guest);
+        //var_dump($this->prefs['readClass']);
         $this->perpage = (int)$this->prefs['entriesPerPage'];
         $this->bbcode = ($this->prefs['allowBBCode'] == 1 ? true : false);
         $this->showsites = ($this->prefs['guestbook_showsites'] == 1 ? true : false);
@@ -115,7 +128,8 @@ $this->sc->guest=$this->guest;
         $this->links = ($this->prefs['allowLinksPost'] == 1 ? true : false);
         // $this->image = ($this->prefs['guestbook_image'] == 1 && extension_loaded("gd") ? true : false);
         $this->image = ($this->prefs['useCaptcha'] == 1 && extension_loaded("gd") ? true : false);
-$this->sc->use_imagecode=$this->image;
+        $this->sc->use_imagecode = $this->image;
+
 
         $this->edittime = time() + ($this->prefs['entryTimeout'] * 60);
         //var_dump($this->edittime);
