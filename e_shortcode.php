@@ -286,7 +286,7 @@ class guestbook_shortcodes extends e_shortcode
     }
     function sc_gb_imagecode_box($parm = '')
     {
-        var_dump($this->use_imagecode );
+      //  var_dump($this->use_imagecode );
         if ($this->use_imagecode && $this->guest) {
             return e107::getSecureImg()->renderInput();
         }

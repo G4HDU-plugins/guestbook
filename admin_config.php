@@ -1,4 +1,5 @@
 <?php
+
 /**
  * +---------------------------------------------------------------+
  * |        Enhanced Guestbook for e107 VV2.0 - by Barry Keal G4HDU
@@ -13,7 +14,8 @@ $eplug_admin = true;
 
 require_once "../../class2.php";
 
-if (!getperms("P") || !e107::isInstalled('guestbook')) {
+if (!getperms("P") || !e107::isInstalled('guestbook'))
+{
     header("location:" . e_BASE . "index.php");
     exit();
 }
@@ -52,8 +54,8 @@ class plugin_guestbook_admin extends e_admin_dispatcher
             'uipath' => null), );
 
     /* Both are optional
-    protected $defaultMode = null;
-    protected $defaultAction = null;
+    * protected $defaultMode = null;
+    * protected $defaultAction = null;
     */
 
     /**
@@ -69,8 +71,8 @@ class plugin_guestbook_admin extends e_admin_dispatcher
         'other0' => array('divider' => true),
 
         'main/prefs' => array('caption' => "Preferences", 'perm' => 'P'),
-        'main/maintenance' => array('caption' => "Maintenance", 'perm' => 'P'),
-        'other1' => array('divider' => true),
+        //'main/maintenance' => array('caption' => "Maintenance", 'perm' => 'P'),
+        // 'other1' => array('divider' => true),
 
         );
 
@@ -144,25 +146,42 @@ class guestbook_main_admin_ui extends e_admin_ui
             'title' => LAN_GB_ADMIN_CFG_6,
             'help' => LAN_GB_ADMIN_CFG_6,
             'tab' => 1,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+            'type' => 'dropdown',
             'data' => 'int'),
         'allowMultiIP' => array(
             'title' => LAN_GB_ADMIN_CFG_7,
             'help' => LAN_GB_ADMIN_CFG_7,
             'tab' => 1,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+            'type' => 'dropdown',
             'data' => 'int'),
         'allowLinksPost' => array(
             'title' => LAN_GB_ADMIN_CFG_8,
             'help' => LAN_GB_ADMIN_CFG_8,
             'tab' => 1,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+            'type' => 'dropdown',
             'data' => 'int'),
         'showURL' => array(
             'title' => LAN_GB_ADMIN_CFG_9,
             'help' => LAN_GB_ADMIN_CFG_9,
             'tab' => 1,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+
+            'type' => 'dropdown',
             'data' => 'int'),
         'entriesPerPage' => array(
             'title' => LAN_GB_ADMIN_CFG_11,
@@ -196,13 +215,23 @@ class guestbook_main_admin_ui extends e_admin_ui
             'title' => LAN_GB_ADMIN_CFG_25,
             'help' => LAN_GB_ADMIN_CFG_25,
             'tab' => 2,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+
+            'type' => 'dropdown',
             'data' => 'int'),
         'modApproveGuests' => array(
             'title' => LAN_GB_ADMIN_CFG_16,
             'help' => LAN_GB_ADMIN_CFG_16,
             'tab' => 2,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+
+            'type' => 'dropdown',
             'data' => 'int'),
         'autoApproverClass' => array(
             'title' => "Auto Approve Class",
@@ -213,7 +242,12 @@ class guestbook_main_admin_ui extends e_admin_ui
             'title' => LAN_GB_ADMIN_CFG_10,
             'help' => LAN_GB_ADMIN_CFG_10,
             'tab' => 2,
-            'type' => 'boolean',
+            'writeParms' => array('optArray' => array(
+                    '0' => LAN_NO,
+                    '1' => LAN_YES,
+                    )),
+
+            'type' => 'dropdown',
             'data' => 'int'),
 
         'udfName1' => array(
@@ -334,8 +368,7 @@ class guestbook_main_admin_ui extends e_admin_ui
             'tab' => 8,
             'type' => 'boolean',
             'data' => 'int'),
-        );
-    //xx
+        ); //xx
 
     /**
      * DB Table, table alias is supported
@@ -351,18 +384,13 @@ class guestbook_main_admin_ui extends e_admin_ui
      *
      * @var string [optional]
      */
-    protected $listQry = "";
-    // optional - required only in case of e.g. tables JOIN. This also could be done with custom model (set it in init())
+    protected $listQry = ""; // optional - required only in case of e.g. tables JOIN. This also could be done with custom model (set it in init())
     // protected $editQry = "SELECT * FROM #guestbook WHERE guestbook_id = {ID}";
     // required - if no custom model is set in init() (primary id)
-    protected $pid = "guestbook_id";
-    // optional
-    protected $perPage = 20;
-    // default - true - TODO - move to displaySettings
-    protected $batchDelete = true;
-    // UNDER CONSTRUCTION
-    protected $displaySettings = array();
-    // UNDER CONSTRUCTION
+    protected $pid = "guestbook_id"; // optional
+    protected $perPage = 20; // default - true - TODO - move to displaySettings
+    protected $batchDelete = true; // UNDER CONSTRUCTION
+    protected $displaySettings = array(); // UNDER CONSTRUCTION
     /**
      * (use this as starting point for wiki documentation)
      * $fields format  (string) $field_name => (array) $attributes
@@ -510,10 +538,10 @@ class guestbook_main_admin_ui extends e_admin_ui
             'thclass' => ''),
         'guestbook_comment' => array(
             'title' => "Comment",
-            'type' => 'text',
+            'type' => 'bbarea',
             'inline' => false,
             'data' => 'str',
-            'width' => 'auto',
+            'width' => '30%',
             'thclass' => '',
             'batch' => true,
             'filter' => false),
@@ -528,13 +556,23 @@ class guestbook_main_admin_ui extends e_admin_ui
             'batch' => true,
             'filter' => true,
             'noedit' => false),
+        'guestbook_confirmed' => array(
+            'title' => "Confirmed",
+            'type' => 'boolean',
+            'data' => 'int',
+            'width' => '5%',
+            'thclass' => 'center',
+            'inline' => true,
+            'batch' => true,
+            'filter' => true,
+            'noedit' => false),
         'guestbook_date' => array(
             'title' => "Posted",
             'type' => 'datestamp',
             'data' => 'int',
             'width' => 'auto',
             'thclass' => '',
-            'readParms' => array('mask' => 'dd mm yyyy - hh:ii:ss'),
+            'readParms' => array('mask' => 'dd mm yyyy'),
             'writeParms' => '',
             'noedit' => true),
         'options' => array(
@@ -544,8 +582,7 @@ class guestbook_main_admin_ui extends e_admin_ui
             'width' => '10%',
             'thclass' => 'center last',
             'class' => 'center last',
-            'forced' => true));
-    // required - default column user prefs
+            'forced' => true)); // required - default column user prefs
     protected $fieldpref = array(
         'checkboxes',
         'guestbook_id',
@@ -554,7 +591,6 @@ class guestbook_main_admin_ui extends e_admin_ui
         'guestbook_approved',
         'guestbook_date',
         'options');
-
     protected $action = array();
     protected $subAction = array();
     protected $id = "";
@@ -562,8 +598,8 @@ class guestbook_main_admin_ui extends e_admin_ui
     /*protected $dataFields = array();*/
     // optional, could be also set directly from $fields array with attributes 'validate' => true|'rule_name', 'rule' => 'condition_name', 'error' => 'Validation Error message'
     /*protected  $validationRules = array(
-    'release_url' => array('required', '', 'Release URL', 'Help text', 'not valid error message')
-    );*/
+    * 'release_url' => array('required', '', 'Release URL', 'Help text', 'not valid error message')
+    * );*/
     // optional, if $pluginName == 'core', core prefs will be used, else e107::getPluginConfig($pluginName);
     /**
      * guestbook_main_admin_ui::observe()
@@ -586,7 +622,6 @@ class guestbook_main_admin_form_ui extends e_admin_form_ui
 }
 new plugin_guestbook_admin();
 require_once e_ADMIN . "auth.php";
-
 e107::getAdminUI()->runPage();
 require_once e_ADMIN . "footer.php";
 

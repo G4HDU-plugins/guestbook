@@ -72,6 +72,7 @@ $('#gbload').on('click', function() {
                         "guestbook_udf3": $('#guestbook-udf3').val(),
                         "guestbook_udf4": $('#guestbook-udf4').val(),
                         "guestbook_udf5": $('#guestbook-udf5').val(),
+                        "guestbook_udf6": $('#guestbook-udf6').val(),
                         "guestbook_comment": $('#guestbook-comment').val()
                     } 
                 );
@@ -122,18 +123,19 @@ jQuery(document).ready(
         timeRemain();
         commentLength();
         
-         $("#guestbook-comment").bind('input propertychange', function() {
-
+         $("#guestbook-comment").on('keyup paste', function() {
+            //console.log('called');
             commentLength();
         });
 
         function commentLength(){
             var limitField=$('#guestbook-comment');
-            var text_max =$('#guestbook-maxlen').val();
-            var fourty=text_max * 0.4;
-            var twenty=text_max * 0.2;
-            var text_length = limitField.val().length;
-            var text_remaining = text_max - text_length;
+            //if(limitField.length ){
+                var text_max =$('#guestbook-maxlen').val();
+                var fourty=text_max * 0.4;
+                var twenty=text_max * 0.2;
+                var text_length = limitField.val().length;
+                var text_remaining = text_max - text_length;
 
             if(text_remaining<=0){
                 var textleft=limitField.val().substring(0, text_max);
@@ -141,9 +143,9 @@ jQuery(document).ready(
                 text_length = limitField.val().length;
                 text_remaining = text_max - text_length;
             }
-
+//alert(text_remaining);
             $('#count_message').html(text_remaining );
-                        
+                  alert(text_remaining);      
             $('#guestbookRemain').addClass('guestbookMaxGreen');
             if (text_remaining<fourty){
                 $('#guestbookRemain').removeClass('guestbookMaxGreen');
@@ -154,6 +156,7 @@ jQuery(document).ready(
                 $('#guestbookRemain').removeClass('guestbookMaxOrange');
                 $('#guestbookRemain').addClass('guestbookMaxRed');
             }
+          //  }
         }
         function timeRemain(){
             var target_date = $('#guestbook-maxtime').val(); // set target date
