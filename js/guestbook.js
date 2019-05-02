@@ -145,7 +145,7 @@ jQuery(document).ready(
             }
 //alert(text_remaining);
             $('#count_message').html(text_remaining );
-                  alert(text_remaining);      
+                 // alert(text_remaining);      
             $('#guestbookRemain').addClass('guestbookMaxGreen');
             if (text_remaining<fourty){
                 $('#guestbookRemain').removeClass('guestbookMaxGreen');
